@@ -96,6 +96,7 @@
       success: function (data) {
         $('#main').loading('toggle')
         $('#url-shortener-modal').modal('show')
+        $('#original-url').val('')
         $('#modal-url').text(data.payload.shorten_url)
       },
       error: function (xhr) {
