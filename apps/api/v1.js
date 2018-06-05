@@ -1,11 +1,13 @@
 module.exports = async ({debug}) => {
   const express = require('express')
   const app = express()
+  app.set('view engine', 'ejs');
+  app.use('/', express.static('statics'))
   const {globalMiddleware, initMongoDb} = require('middlewares/index')
 
   globalMiddleware({app})
-  const {UserModel} = await initMongoDb({app, debug})
-  const indexRouter = require('routes/api/v1/index')({UserModel})
+  const {UrlModel} = await initMongoDb({app, debug})
+  const indexRouter = require('routes/api/v1/index')({UrlModel})
   app.use('/', indexRouter)
 
 // catch 404 and forward to error handler

@@ -4,9 +4,9 @@ module.exports = async ({app, debug = console.log}) => {
   try {
     const mongoose = await init({debug})
     app.set('mongoose', mongoose)
-    const UserModel = require('models/user')({mongoose})
+    const UrlModel = require('models/url')({mongoose})
     return  {
-      UserModel
+      UrlModel
     }
   } catch (e) {
     debug(`Error on connecting to the database -> ${e.stack}`)
