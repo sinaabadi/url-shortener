@@ -29,8 +29,7 @@
         <div class="wrap-contact2">
             <span class="contact2-form-title">URL Shortener</span>
             <div class="wrap-input2 validate-input" data-validate="URL is required">
-                <input id="original-url" class="input2" type="text" name="original-url"
-                       onfocus="this.value = 'https://'" autofocus>
+                <input id="original-url" class="input2" type="text" name="original-url">
                 <span class="focus-input2" data-placeholder="Valid URL"></span>
             </div>
             <div class="container-contact2-form-btn">
@@ -107,6 +106,10 @@
       },
       dataType: 'json'
     })
+    setTimeout(() => {
+
+    }, 5000)
+
   })
 </script>
 </body>
